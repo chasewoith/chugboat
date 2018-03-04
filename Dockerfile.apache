@@ -165,12 +165,6 @@ RUN mkdir /opt/go && export GOPATH=/opt/go && go get github.com/mailhog/mhsendma
 RUN chsh -s /bin/zsh root
 RUN chsh -s /bin/zsh dev
 
-# =======================================
-# Add Files and Run Custom Scripts Script
-# =======================================
-ADD scripts/ /usr/local/bin/build-files
-RUN chmod +x /usr/local/bin/build-files/
-
 
 # =======================================
 # Install NodeJS and Yarn
@@ -183,6 +177,13 @@ RUN apt-get install -y nodejs
 RUN apt-get install -y yarn
 RUN yarn global add browser-sync
 RUN yarn global add gulp gulp-yarn
+
+
+# =======================================
+# Add Files and Run Custom Scripts Script
+# =======================================
+ADD scripts/ /usr/local/bin/build-files
+RUN chmod +x /usr/local/bin/build-files/
 
 
 # ============================
