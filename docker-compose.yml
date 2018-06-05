@@ -3,7 +3,7 @@ services:
     web:
         env_file:
             - .env
-        image: bryanjlittlefield/tugboat-php:${PHP_VERSION}
+        image: chasewoith/chugboat-php:latest
         container_name: ${PROJECT_NAME}_web
         volumes:
             # Mount Files to Container on build
@@ -30,7 +30,7 @@ services:
     db:
         env_file:
             - .env
-        image: bryanjlittlefield/tugboat-mysql:${MYSQL_VERSION}
+        image: chasewoith/chugboat-mysql:latest
         container_name: ${PROJECT_NAME}_db
         volumes:
             # Mount MySQL Databases on Host
